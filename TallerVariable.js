@@ -1,0 +1,17 @@
+let nombreCompleto = "" ;
+let edad = 0 ;
+let tipoDocumento = "" ;
+let numeroDocumento = "" ;
+let salario = 0 ;
+let comisiones = 0 ;
+let horasExtra = 0 ;
+let nivelRiesgo = "" ;
+const salarioMinimoLegal = 1750905 ;
+const salarioMinimoIntegral = 22761765 ;
+const subsidioTransporte = 249095 ;
+const valorTributario = 52.37 ;
+const riesgoMinimo = 0.522 ;
+const riesgoBajo = 1.044 ;
+const riesgoMedio = 2.436 ;
+const riesgoAlto = 4.350 ;
+const riesgoMaximo = 6.960 ;
