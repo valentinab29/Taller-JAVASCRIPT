@@ -6,6 +6,7 @@ let salario = 0 ;
 let comisiones = 0 ;
 let horasExtra = 0 ;
 let nivelRiesgo = "" ;
+
 const salarioMinimoLegal = 1750905 ;
 const salarioMinimoIntegral = 22761765 ;
 const subsidioTransporte = 249095 ;
@@ -18,10 +19,12 @@ const riesgoMaximo = 6.960 ;
 const porcentajeIBC = 0.7 ;
 const porcentajeSalud = 0.04 ;
 const porcentajePension = 0.04 ;
+
 let salarioTotal = salario + comisiones + horasExtra ;
-let IBC = salarioTotal * porcentajeIBC ;
-let salud = IBC * porcentajeSalud ;
-let pension = porcentajePension * IBC ;  
+let IBC = calcularporcentaje ( salarioTotal, porcentajeIBC ) ;
+let salud = calcularporcentaje ( IBC, porcentajeSalud ) ;
+let pension = calcularporcentaje ( IBC, porcentajePension ) ;  
+
 if ( edad < 18 ) { 
   console.log ("No se puede calcular");
 } else if ( edad >= 18 && edad < 25 ) {
@@ -30,4 +33,8 @@ if ( edad < 18 ) {
     console.log ("Se calcularà la pensiòn");
 } else { 
     console.log ("Podrà continuar con el siguiente paso del proceso");
+}
+
+function calcularporcentaje ( valor, porcentaje ) {
+    return valor * porcentaje;
 }
