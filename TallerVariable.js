@@ -21,10 +21,14 @@ else {
 }
 
 
-let salario = 0;
-let comisiones = 0;
-let horasExtras = 0;
-let nivelRiesgo = "";
+let salario = prompt (Poner su salario);
+console.log (salario);
+let comisiones = prompt (Poner sus comisiones);
+console.log (comisiones);
+let horasExtras = prompt (Poner sus horas extra);
+console.log (horasExtras);
+let nivelRiesgo = prompt (Poner su nivel de riesgo);
+console.log (nivelRiesgo);
 
 const SMLV = 1750905;
 const SMIV = 22761765;
