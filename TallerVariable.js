@@ -1,7 +1,11 @@
-let nombreCompleto = "";
-let edad = 0;
-let tipoDoc = "";
-let numeroDoc = "";  
+let nombreCompleto = prompt (Poner su nombre completo);
+console.log (nombreCompleto);
+let edad = prompt (Poner su edad);
+console.log (edad);
+let tipoDoc = prompt (Poner su tipo de documento);
+console.log (tipoDoc);
+let numeroDoc = prompt (Poner su número de documento);
+console.log (numeroDoc);
 
 if (edad < 18 ) {
 console.log ("No tiene permitido entrar");
