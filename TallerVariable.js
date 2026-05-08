@@ -1,11 +1,7 @@
-let nombreCompleto = prompt (Poner su nombre completo);
-console.log (nombreCompleto);
-let edad = prompt (Poner su edad);
-console.log (edad);
-let tipoDoc = prompt (Poner su tipo de documento);
-console.log (tipoDoc);
-let numeroDoc = prompt (Poner su número de documento);
-console.log (numeroDoc);
+let nombreCompleto = document.getElementById(nombreCompleto).value
+let edad = document.getElementById(edad).value
+let tipoDoc = document.getElementById(tipoDoc).value
+let numeroDoc = document.getElementById(numeroDoc).value
 
 if (edad < 18 ) {
 console.log ("No tiene permitido entrar");
@@ -21,14 +17,10 @@ else {
 }
 
 
-let salario = prompt (Poner su salario);
-console.log (salario);
-let comisiones = prompt (Poner sus comisiones);
-console.log (comisiones);
-let horasExtras = prompt (Poner sus horas extra);
-console.log (horasExtras);
-let nivelRiesgo = prompt (Poner su nivel de riesgo);
-console.log (nivelRiesgo);
+let salario = document.getElementById(salario).value
+let comisiones = document.getElementById(comisiones).value
+let horasExtras = document.getElementById(horasExtras).value
+let nivelRiesgo = document.getElementById(nivelRiesgo).value
 
 const SMLV = 1750905;
 const SMIV = 22761765;
@@ -54,3 +46,4 @@ let SalarioTotal = salario + comisiones + horasExtras;
 let IBC = calcularPorcentaje(SalarioTotal, porcentajeIBC);
 let salud = calcularPorcentaje(IBC, porcentajeSalud);
 let pension = calcularPorcentaje(IBC, porcentajePension);
+

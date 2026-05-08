@@ -2,58 +2,96 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-    background-color: #cea1e9;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background: linear-gradient(135deg, #eaebf0, #cbace4);
+    overflow: hidden;
 }
 
+
 form{
-    background-color: rgb(255, 255, 255);
-    padding: 25px;
-    border-radius: 10px;
-    width: 350px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 380px;
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    animation: aparecer 1s ease;
+    transition: transform 0.3s ease;
 }
+
 
 label{
     display: block;
     margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+    margin-bottom: 6px;
+    color: rgb(39, 38, 41);
+    font-size: 15px;
+    font-weight: 600;
 }
+
 
 input,
 select{
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
 }
+
 
 input:focus,
 select:focus{
-    outline: none;
-    border-color: #430457;
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(224, 230, 135, 0.719);
 }
 
+
 #button{
-    margin-top: 20px;
-    background-color: #813e92;
+    margin-top: 25px;
+    background: linear-gradient(45deg, #c42fff, #a924dd);
     color: white;
-    border: none;
-    cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
 }
 
 #button:hover{
-    background-color: #8bb2d8;
+    transform: translateY(-1.5px);
+    box-shadow: 0 8px 20px rgba(238, 231, 171, 0.548);
+}
+
+#button:active{
+    transform: scale(0.75);
+}
+
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media(max-width: 450px){
+    form{
+        width: 90%;
+        padding: 25px;
+    }
 }
