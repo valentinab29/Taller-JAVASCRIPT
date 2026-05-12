@@ -8,7 +8,7 @@
 </head>
 
 <body> 
-<script src="script.js"></script> 
+
 <form id="registro-usuario">
   
     <label for="nombreCompleto">Nombre Completo:</label>
@@ -34,10 +34,10 @@
 
   
   
-    <label for="numeroDoc">Número de Documento:</label>
+    <label for="numeroDoc">Número de Documento (sin puntos ni comas):</label>
     <input type="text" id="numeroDoc" name="numeroDoc" required>
   
-<label for="salario">Salario:</label>
+<label for="salario">Salario (sin puntos ni comas):</label>
 <input type="number" id="salario" name="salario">
 
 <label for="comisiones">Comisiones:</label>
@@ -51,6 +51,12 @@
   
   
    <input type="button" id="button" name="button" value="Enviar Registro">
+
+   <div id="resultado"></div>
+
 </form>
+
+<script src="taller.js"></script>
+
 </body>
 </html>

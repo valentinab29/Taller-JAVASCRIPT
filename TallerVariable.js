@@ -1,49 +1,73 @@
-let nombreCompleto = document.getElementById(nombreCompleto).value
-let edad = document.getElementById(edad).value
-let tipoDoc = document.getElementById(tipoDoc).value
-let numeroDoc = document.getElementById(numeroDoc).value
+document.getElementById("button").addEventListener("click", function () {
 
-if (edad < 18 ) {
-console.log ("No tiene permitido entrar");
-}
-else if (edad >=18 && edad <= 25) { 
-        console.log("Usuario beneficiario por cotizante, no puede entrar");
-    }
-else if (edad >= 60){
-console.log("Se calculara la pensión");
-}
-else {
-    console.log("Puede entrar");
-}
+let nombreCompleto = document.getElementById("nombreCompleto").value;
+let edad = parseInt(document.getElementById("edad").value);
+let tipoDoc = document.getElementById("tipoDoc").value;
+let numeroDoc = document.getElementById("numeroDoc").value;
 
-
-let salario = document.getElementById(salario).value
-let comisiones = document.getElementById(comisiones).value
-let horasExtras = document.getElementById(horasExtras).value
-let nivelRiesgo = document.getElementById(nivelRiesgo).value
+let salario = parseFloat(document.getElementById("salario").value) || 0;
+let comisiones = parseFloat(document.getElementById("comisiones").value) || 0;
+let horasExtras = parseFloat(document.getElementById("horasExtras").value) || 0;
+let nivelRiesgo = parseInt(document.getElementById("nivelRiesgo").value);
 
 const SMLV = 1750905;
-const SMIV = 22761765;
-const SubTransporte = 249095;
-const undValorTributario = 52.37;  
-
-const riesgo = [0.522, 1.044, 2.436, 4.350, 6.960];
-
 
 const porcentajeIBC = 0.7;
 const porcentajeSalud = 0.04;
 const porcentajePension = 0.04;
 const porcentFondoSolidaridad = 0.01;
 
-function calcularPorcentaje (base, porcentaje) {
-  return base * porcentaje;
+function calcularPorcentaje(base, porcentaje) {
+    return base * porcentaje;
 }
 
-let fondoSolidaridad = calcularPorcentaje(IBC, porcentFondoSolidaridad);
-IBC>=4*SMLV ? fondoSolidaridad : fondoSolidaridad = 0;
+let mensaje = "";
 
-let SalarioTotal = salario + comisiones + horasExtras;
-let IBC = calcularPorcentaje(SalarioTotal, porcentajeIBC);
-let salud = calcularPorcentaje(IBC, porcentajeSalud);
-let pension = calcularPorcentaje(IBC, porcentajePension);
 
+if(nombreCompleto === ""){
+    mensaje = "Debe ingresar su nombre";
+}
+else if(isNaN(edad)){
+    mensaje = "Debe ingresar una edad válida";
+}
+else if(edad < 18){
+    mensaje = "No tiene permitido entrar";
+}
+else if(edad >= 18 && edad <= 25){
+    mensaje = "Usuario beneficiario por cotizante, no puede entrar";
+}
+else{
+
+    let salarioTotal = salario + comisiones + horasExtras;
+
+    let IBC = calcularPorcentaje(salarioTotal, porcentajeIBC);
+
+    let salud = calcularPorcentaje(IBC, porcentajeSalud);
+
+    let pension = calcularPorcentaje(IBC, porcentajePension);
+
+    let fondoSolidaridad = 0;
+
+    if(IBC >= 4 * SMLV){
+        fondoSolidaridad = calcularPorcentaje(IBC, porcentFondoSolidaridad);
+    }
+
+    mensaje = `
+    Bienvenido ${nombreCompleto}<br>
+    Documento: ${tipoDoc} ${numeroDoc}<br><br>
+
+    Salario Total: $${salarioTotal}<br>
+    IBC: $${IBC}<br>
+    Salud: $${salud}<br>
+    Pensión: $${pension}<br>
+    Fondo Solidaridad: $${fondoSolidaridad}
+    `;
+
+    if(edad >= 60){
+        mensaje += "<br><br>Se calculará la pensión";
+    }
+}
+
+document.getElementById("resultado").innerHTML = mensaje;
+
+});

@@ -16,7 +16,7 @@ body{
 
 
 form{
-    width: 380px;
+    width: 400px;
     padding: 35px;
     border-radius: 20px;
     background: rgba(255,255,255,0.15);
@@ -94,4 +94,40 @@ select:focus{
         width: 90%;
         padding: 25px;
     }
+}
+
+input:hover{
+    background-color: #f3e8ff;
+}
+
+input:valid{
+    border: 2px solid rgb(170, 230, 170);
+}
+
+input:invalid{
+    border: 2px solid rgb(245, 175, 175);
+}
+
+#button:hover{
+    letter-spacing: 2px;
+}
+
+
+label::after{
+    content: " ✨";
+    color: rgb(184, 82, 224);
+}
+
+#resultado{
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.4);
+    color: rgb(39,38,41);
+}
+
+#resultado::before{
+    content: "Resultado: ";
+    font-weight: bold;
+    color: rgb(123, 0, 172);
 }
