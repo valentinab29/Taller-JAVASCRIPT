@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -97,26 +97,17 @@ select:focus{
 }
 
 input:hover{
-    background-color: #f3e8ff;
-}
-
-input:valid{
-    border: 2px solid rgb(170, 230, 170);
-}
-
-input:invalid{
-    border: 2px solid rgb(245, 175, 175);
+    background-color: #e8eaff;
 }
 
 #button:hover{
     letter-spacing: 2px;
 }
 
-
-label::after{
-    content: " ✨";
-    color: rgb(184, 82, 224);
+input:hover{
+    transform: scale(1.02);
 }
+
 
 #resultado{
     margin-top: 20px;
@@ -124,6 +115,7 @@ label::after{
     border-radius: 12px;
     background: rgba(255,255,255,0.4);
     color: rgb(39,38,41);
+    font-weight: bold;
 }
 
 #resultado::before{
