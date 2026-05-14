@@ -12,7 +12,7 @@
 <form id="registro-usuario">
   
     <label for="nombreCompleto">Nombre Completo:</label>
-    <input type="text" id="nombreCompleto" name="nombreCompleto">
+    <input type="text" id="nombreCompleto" name="nombreCompleto" minlength="12" maxlength="50">
 
   
   
@@ -35,7 +35,7 @@
   
   
     <label for="numeroDoc">Número de Documento (sin puntos ni comas):</label>
-    <input type="text" id="numeroDoc" name="numeroDoc" required>
+    <input type="text" id="numeroDoc" name="numeroDoc" required minlength="9" maxlength="10" >
   
 <label for="salario">Salario (sin puntos ni comas):</label>
 <input type="number" id="salario" name="salario">

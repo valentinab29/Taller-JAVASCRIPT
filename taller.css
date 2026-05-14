@@ -14,12 +14,15 @@ body{
     overflow: hidden;
 }
 
+body {
+  background-image: url("textura.jpeg");
+}
 
 form{
     width: 400px;
     padding: 35px;
     border-radius: 20px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(232, 238, 148, 0.459);
     backdrop-filter: blur(12px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     animation: aparecer 1s ease;
