@@ -13,8 +13,8 @@ let numeroDoc = document.getElementById("numeroDoc").value
 console.log(numeroDoc);
 
 let salario = parseFloat(document.getElementById("salario").value)
-let comisiones = parseFloat(document.getElementById("comisiones").value)
-let horasExtras = parseFloat(document.getElementById("horasExtras").value)
+let comisiones = parseFloat(document.getElementById("comisiones").value) || 0
+let horasExtras = parseFloat(document.getElementById("horasExtras").value) || 0
 let nivelRiesgo = parseInt(document.getElementById("nivelRiesgo").value)
 
 let errores = "";
@@ -26,8 +26,6 @@ isNaN(edad) ||
 tipoDoc == "" ||
 numeroDoc == "" ||
 isNaN(salario) ||
-isNaN(comisiones) ||
-isNaN(horasExtras) ||
 isNaN(nivelRiesgo)
 ) {
 
@@ -35,6 +33,11 @@ errores += "Complete todos los campos <br>";
 
 }
 
+if (nombreCompleto != "" && nombreCompleto.length < 12) {
+
+errores += "El nombre debe tener mínimo 12 caracteres <br>";
+
+}
 
 if (edad > 120) {
 
@@ -49,6 +52,11 @@ errores += "La edad no puede ser negativa <br>";
 
 }
 
+if (!isNaN(edad) && edad % 1 != 0) {
+
+errores += "La edad no puede tener decimales <br>";
+
+}
 
 if (salario < 0) {
 
